@@ -11,7 +11,7 @@ const PeopleItem = (props) => {
 
     return (
         <TouchableWithoutFeedback
-            onPress={() => props.selectedPerson(props.people)}>
+            onPress={() => props.selectPerson(props.people)}>
             <View style={styles.card}>
                 <Image 
                     source={require('../images/background.jpg')}
