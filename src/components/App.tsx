@@ -4,7 +4,13 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import { Provider } from 'react-redux';
 import { legacy_createStore as createStore } from 'redux';
 import reducers from '../reducers/PeopleReducer';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import PeopleList from './PeopleList';
+import CompanyList from './CompanyList';
+import AddPerson from './AddPerson';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 // const store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 const store = createStore(reducers);
@@ -12,13 +18,49 @@ const store = createStore(reducers);
 
 type Props = {};
 
+const Tab = createBottomTabNavigator();
+
+
 export default class App extends Component<Props> {
   render() {
     return (
       <Provider store={store}>
-        <View style={styles.container}>
-          <PeopleList />
-        </View>
+         <NavigationContainer>
+            {/* <Tab.Navigator
+              initialRouteName='People'
+              screenOptions={{
+                tabBarActiveTintColor: 'white',
+                tabBarInactiveTintColor: '#80cbc4',
+                tabBarActiveBackgroundColor: '80cbc4',
+              }}
+            > */}
+              <Tab.Navigator
+                screenOptions={({ route }) => ({
+                  tabBarIcon: ({ focused, color, size}) => {
+                    let iconName;
+
+                    if (route.name === 'People') {
+                      iconName = focused
+                        ? 'ios-information-circle'
+                        : 'ios-information-circle-outline';
+                    } else if (route.name === 'AddPerson') {
+                      iconName = focused ? 'ios-list' : 'ios-list-outline';
+                    }
+                  }
+                })}
+              >
+                <Tab.Screen 
+                name="People" 
+                component={PeopleList} 
+                options={{
+                  // tabBarStyle: {backgroundColor: '#dddd'},
+                  // tabBarButton: (props) => <TouchableOpacity {...props} />
+                }}
+                />
+                <Tab.Screen name="AddPerson" component={AddPerson} />
+                <Tab.Screen name="CompanyList" component={CompanyList} />
+            </Tab.Navigator>
+         </NavigationContainer>
       </Provider>
     )
   }
