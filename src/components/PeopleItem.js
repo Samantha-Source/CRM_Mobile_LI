@@ -32,10 +32,10 @@ const PeopleItem = (props) => {
 
 const styles = StyleSheet.create({
     card: {
-        marginTop: 20,
+        marginTop: 15,
         borderRadius: 20,
-        marginLeft: 5,
-        marginRight: 5,
+        marginLeft: 7,
+        marginRight: 7,
         overflow: 'hidden',
     },
     title: {
