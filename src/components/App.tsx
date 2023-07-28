@@ -38,15 +38,28 @@ export default class App extends Component<Props> {
                 screenOptions={({ route }) => ({
                   tabBarIcon: ({ focused, color, size}) => {
                     let iconName;
+                    if( iconName = focused) {
+                      size = size + 10;
+                    }
 
                     if (route.name === 'People') {
                       iconName = focused
-                        ? 'ios-information-circle'
-                        : 'ios-information-circle-outline';
+                        ? 'people-circle'
+                        : 'people-circle-outline';
                     } else if (route.name === 'AddPerson') {
-                      iconName = focused ? 'ios-list' : 'ios-list-outline';
+                      iconName = focused
+                        ? 'person-add'
+                        : 'person-add-outline';
+                    } else if (route.name === 'CompanyList') {
+                      iconName = focused
+                        ? 'business'
+                        : 'business-outline'
                     }
-                  }
+
+                    return <Ionicons name={iconName} size={size} color={color} />
+                  },
+                  tabBarActiveTintColor: '#3F6634',
+                  tabBarInactiveTintColor: 'gray',
                 })}
               >
                 <Tab.Screen 
