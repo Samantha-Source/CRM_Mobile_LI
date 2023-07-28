@@ -46,11 +46,11 @@ export default class App extends Component<Props> {
                       iconName = focused
                         ? 'people-circle'
                         : 'people-circle-outline';
-                    } else if (route.name === 'AddPerson') {
+                    } else if (route.name === 'Add Person') {
                       iconName = focused
                         ? 'person-add'
                         : 'person-add-outline';
-                    } else if (route.name === 'CompanyList') {
+                    } else if (route.name === 'Company List') {
                       iconName = focused
                         ? 'business'
                         : 'business-outline'
@@ -58,8 +58,11 @@ export default class App extends Component<Props> {
 
                     return <Ionicons name={iconName} size={size} color={color} />
                   },
-                  tabBarActiveTintColor: '#3F6634',
-                  tabBarInactiveTintColor: 'gray',
+                  tabBarActiveTintColor: '#14524C',
+                  tabBarInactiveTintColor: 'white',
+                  tabBarActiveBackgroundColor: '#68CABF',
+                  tabBarInactiveBackgroundColor: '#3AA699',
+                  headerShown: false
                 })}
               >
                 <Tab.Screen 
@@ -70,8 +73,8 @@ export default class App extends Component<Props> {
                   // tabBarButton: (props) => <TouchableOpacity {...props} />
                 }}
                 />
-                <Tab.Screen name="AddPerson" component={AddPerson} />
-                <Tab.Screen name="CompanyList" component={CompanyList} />
+                <Tab.Screen name="Add Person" component={AddPerson} />
+                <Tab.Screen name="Company List" component={CompanyList} />
             </Tab.Navigator>
          </NavigationContainer>
       </Provider>
@@ -99,5 +102,6 @@ const styles = StyleSheet.create({
   highlight: {
     fontWeight: '700',
   },
+
 });
 

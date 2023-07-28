@@ -11,7 +11,7 @@ const PeopleItem = (props) => {
 
     return (
 
-            <View style={[theme.cardStyle, styles.card]}>
+            <View style={styles.card}>
                 <Image 
                     source={require('../images/background.jpg')}
                     style={[theme.cardImageStyle, styles.image]}
@@ -33,6 +33,10 @@ const PeopleItem = (props) => {
 const styles = StyleSheet.create({
     card: {
         marginTop: 20,
+        borderRadius: 20,
+        marginLeft: 5,
+        marginRight: 5,
+        overflow: 'hidden',
     },
     title: {
         top: 20,
@@ -43,7 +47,7 @@ const styles = StyleSheet.create({
         height: 100,
     },
     action: {
-        backgroundColor: 'black',
+        backgroundColor: '#18635B',
         color: 'white',
     },
     icon: {
