@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Image, Text, SafeAreaView } from 'react-native';
+import { View, StyleSheet, Image, Text, SafeAreaView, TouchableWithoutFeedback } from 'react-native';
 import { connect } from 'react-redux';
 import { getTheme } from 'react-native-material-kit';
 import * as actions from '../actions';
@@ -10,7 +10,8 @@ const theme = getTheme();
 const PeopleItem = (props) => {
 
     return (
-
+        <TouchableWithoutFeedback
+            onPress={() => props.selectedPerson(props.people)}>
             <View style={styles.card}>
                 <Image 
                     source={require('../images/background.jpg')}
@@ -24,6 +25,7 @@ const PeopleItem = (props) => {
                 <Text style={[theme.cardTitleStyle, styles.title]}>{props.people.firstName} {props.people.lastName}</Text>
                 <Text style={[theme.cardActionStyle, styles.action]}>{props.people.company}</Text>
             </View>
+        </TouchableWithoutFeedback>
 
     )
 }

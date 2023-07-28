@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import { View, StyleSheet, FlatList, Text } from 'react-native';
 import { connect } from 'react-redux';
 import PeopleItem from './PeopleItem';
+import PeopleDetail from './PeopleDetail';
 
 
 class PeopleList extends Component {
@@ -11,13 +12,26 @@ class PeopleList extends Component {
         )
     }
 
-    render() {
-        return (
-            <View style={styles.container}>
+    renderInitialView() {
+        if (this.props.detailView === true) {
+            return (
+                <PeopleDetail />
+            )
+        } else {
+            return (
                 <FlatList 
                     data={this.props.people}
                     renderItem={({item}) => <PeopleItem people={item}/>}
                 />
+            )
+        }
+    }
+
+
+    render() {
+        return (
+            <View style={styles.container}>
+                {this.renderInitialView()}
             </View>
         )
     }
@@ -25,7 +39,10 @@ class PeopleList extends Component {
 
 
 const mapStateToProps = state => {
-    return { people: state.people }
+    return { 
+        people: state.people,
+        detailView: state.detailView,
+    }
 }
 
 const styles = StyleSheet.create({
