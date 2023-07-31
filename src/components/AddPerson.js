@@ -13,12 +13,6 @@ const AddButton = ({ onPress, title }) => (
     </TouchableOpacity>
 );
 
-// const TextField = ({title, onChange }) => (
-//     <MKTextField
-//         placeholder={title}
-//         onChangeText={onChange}
-//     />
-// )
 
 class AddPerson extends Component {
     static navigationOptions = {
@@ -36,7 +30,7 @@ class AddPerson extends Component {
                         label="First Name"
                         iconClass={FontAwesomeIcon}
                         iconName={'user'}
-                        iconColor={MKColor.Amber}
+                        iconColor={MKColor.Blue}
                         iconSize={20}
                         iconWidth={40}
                         inputPadding={16}
@@ -46,7 +40,7 @@ class AddPerson extends Component {
                         label="Last Name"
                         iconClass={FontAwesomeIcon}
                         iconName={'user'}
-                        iconColor={MKColor.Amber}
+                        iconColor={MKColor.Blue}
                         iconSize={20}
                         iconWidth={40}
                         inputPadding={16}
@@ -56,7 +50,7 @@ class AddPerson extends Component {
                         label="Phone Number"
                         iconClass={FontAwesomeIcon}
                         iconName={'phone'}
-                        iconColor={MKColor.Amber}
+                        iconColor={MKColor.Blue}
                         iconSize={20}
                         iconWidth={40}
                         inputPadding={16}
@@ -66,7 +60,7 @@ class AddPerson extends Component {
                         label="Email"
                         iconClass={FontAwesomeIcon}
                         iconName={'envelope'}
-                        iconColor={MKColor.Amber}
+                        iconColor={MKColor.Blue}
                         iconSize={20}
                         iconWidth={40}
                         inputPadding={16}
@@ -76,7 +70,7 @@ class AddPerson extends Component {
                         label="Company"
                         iconClass={FontAwesomeIcon}
                         iconName={'university'}
-                        iconColor={MKColor.Amber}
+                        iconColor={MKColor.Blue}
                         iconSize={20}
                         iconWidth={40}
                         inputPadding={16}
@@ -86,7 +80,7 @@ class AddPerson extends Component {
                         label="Project"
                         iconClass={FontAwesomeIcon}
                         iconName={'folder-open'}
-                        iconColor={MKColor.Amber}
+                        iconColor={MKColor.Blue}
                         iconSize={20}
                         iconWidth={40}
                         inputPadding={16}
@@ -96,7 +90,7 @@ class AddPerson extends Component {
                         label="Notes"
                         iconClass={FontAwesomeIcon}
                         iconName={'pencil-square-o'}
-                        iconColor={MKColor.Amber}
+                        iconColor={MKColor.Blue}
                         iconSize={20}
                         iconWidth={40}
                         inputPadding={16}
@@ -109,7 +103,7 @@ class AddPerson extends Component {
 
 
                 <View>
-                    <AddButton title="Button" size="sm" backgroundColor="#007bff" onPress={() => console.log("pressed Add Person button")} />
+                    <AddButton title="Create Contact" size="sm" backgroundColor="#007bff" onPress={() => console.log("pressed Add Person button")} />
                 </View>
 
 
@@ -143,7 +137,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         backgroundColor: '#ABEDC6',
         borderRadius: 50,
-        width: 150,
+        width: 200,
         height: 50,
         justifyContent: 'center'
         

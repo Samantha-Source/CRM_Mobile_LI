@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import { Provider } from 'react-redux';
@@ -26,14 +25,6 @@ export default class App extends Component<Props> {
     return (
       <Provider store={store}>
          <NavigationContainer>
-            {/* <Tab.Navigator
-              initialRouteName='People'
-              screenOptions={{
-                tabBarActiveTintColor: 'white',
-                tabBarInactiveTintColor: '#80cbc4',
-                tabBarActiveBackgroundColor: '80cbc4',
-              }}
-            > */}
               <Tab.Navigator
                 screenOptions={({ route }) => ({
                   tabBarIcon: ({ focused, color, size}) => {
@@ -62,7 +53,8 @@ export default class App extends Component<Props> {
                   tabBarInactiveTintColor: 'white',
                   tabBarActiveBackgroundColor: '#68CABF',
                   tabBarInactiveBackgroundColor: '#3AA699',
-                  headerShown: false
+                  headerShown: false,
+                  tabBarHideOnKeyboard: true,
                 })}
               >
                 <Tab.Screen 
