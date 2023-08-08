@@ -14,7 +14,6 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 // const store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 const store = createStore(reducers);
 
-
 type Props = {};
 
 const Tab = createBottomTabNavigator();
