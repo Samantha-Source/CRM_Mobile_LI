@@ -44,33 +44,34 @@ class PeopleDetail extends Component {
                     <Text style={[theme.cardContentStyle]}>{this.props.person.notes}</Text>
                 </View>
 
+                <View style={styles.hrLine}></View>
                 <View>
-                    <TouchableOpacity>
-                        <Image 
-                            source={require('../images/call@2x.png.png')}
-                            style={styles.actionImage}
-                        />
-                    </TouchableOpacity>
+                    <View style={styles.actionAreaButtons}>
+                        <TouchableOpacity>
+                            <Image 
+                                source={require('../images/call@2x.png.png')}
+                                style={styles.actionImage}
+                            />
+                            <Text style={{textAlign: 'center'}}>Call</Text>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity>
-                        <Image 
-                            source={require('../images/email@2x.png.png')}
-                            style={styles.actionImage}
-                        />
-                    </TouchableOpacity>
+                        <TouchableOpacity>
+                            <Image 
+                                source={require('../images/email@2x.png.png')}
+                                style={styles.actionImage}
+                            />
+                            <Text style={{textAlign: 'center'}}>Email</Text>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity>
-                        <Image 
-                            source={require('../images/sms@2x.png.png')}
-                            style={styles.actionImage}
-                        />
-                    </TouchableOpacity>
-
-                    <View style={styles.actionArea}>
-                        <Text>Call</Text>
-                        <Text>Email</Text>
-                        <Text>SMS</Text>
+                        <TouchableOpacity>
+                            <Image 
+                                source={require('../images/sms@2x.png.png')}
+                                style={styles.actionImage}
+                            />
+                            <Text style={{textAlign: 'center'}}>SMS</Text>
+                        </TouchableOpacity>
                     </View>
+
                 </View>
 
                </ScrollView>
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
     image: {
         flex: 0,
         height: 100,
-        width: 333,
+        width: '100%',
         backgroundColor: 'transparent',
         justifyContent: 'center',
         alignItems: 'center',
@@ -121,7 +122,7 @@ const styles = StyleSheet.create({
     closeIcon: {
         position: 'absolute',
         top: 5,
-        left: 295,
+        left: '90%',
         color: 'rgba(233,166,154,0.8)',
         backgroundColor: 'rgba(255,255,255,0)',
     },
@@ -145,13 +146,25 @@ const styles = StyleSheet.create({
         color: '#26A69A',
     },
     actionImage: {
-
+        flexDirection: 'row',
+        height: 55,
+        width: 55,
+    },
+    actionAreaButtons: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
     },
     actionArea: {
         paddingTop: 10,
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
+    },
+    hrLine: {
+        height: 1,
+        backgroundColor: 'lightgrey',
+        marginVertical: 15,
     }
 
 });
