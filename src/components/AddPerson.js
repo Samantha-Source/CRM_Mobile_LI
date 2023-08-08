@@ -23,11 +23,10 @@ class AddPerson extends Component {
 
     onAddPress() {
         const { firstName, lastName, phone, email, company, project, notes } = this.props;
-        console.log(firstName, lastName);
 
-        // this.props.createNewContact({ firstName, lastName, phone, email, company, project, notes });
+        this.props.createNewContact({ firstName, lastName, phone, email, company, project, notes });
 
-        // this.props.navigation.navigate('People');
+        this.props.navigation.navigate('People');
     }
 
 
@@ -130,7 +129,7 @@ class AddPerson extends Component {
                         title="Create Contact" 
                         size="sm" 
                         backgroundColor="#007bff" 
-                        onPress={() => console.log("pressed Add Person button")}
+                        onPress={this.onAddPress.bind(this)}
                         />
                 </View>
 

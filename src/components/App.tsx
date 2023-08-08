@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import { Provider } from 'react-redux';
-import { legacy_createStore as createStore } from 'redux';
+import { legacy_createStore as createStore, applyMiddleware } from 'redux';
 import reducers from '../reducers/PeopleReducer';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -10,9 +10,10 @@ import PeopleList from './PeopleList';
 import CompanyList from './CompanyList';
 import AddPerson from './AddPerson';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import thunk from 'redux-thunk';
 
 // const store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-const store = createStore(reducers);
+const store = createStore(reducers, applyMiddleware(thunk));
 
 type Props = {};
 
