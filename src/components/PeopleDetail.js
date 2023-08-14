@@ -72,6 +72,16 @@ class PeopleDetail extends Component {
                         </TouchableOpacity>
                     </View>
 
+                    <View>
+                        <TouchableOpacity>
+                            <MaterialIcon name={'autorenew'} size={40} style={styles.editIcon} />
+                            <Text style={theme.cardContentStyle}>EDIT</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <MaterialIcon name={'delete-forever'} size={40} style={styles.editIcon} />
+                            <Text style={theme.cardContentStyle}>Delete</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
 
                </ScrollView>
