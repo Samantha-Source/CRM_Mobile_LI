@@ -3,6 +3,7 @@ import { View, StyleSheet, FlatList, Text } from 'react-native';
 import { connect } from 'react-redux';
 import PeopleItem from './PeopleItem';
 import PeopleDetail from './PeopleDetail';
+import { loadInitialContacts } from '../actions';
 
 
 class PeopleList extends Component {
@@ -10,6 +11,13 @@ class PeopleList extends Component {
         tabBarIcon: ({ tintColor }) => (
             <Icon name={'user'} size={50} color={tintColor} />
         )
+    }
+
+    // UNSAFE_componentWillMount() {
+    //     this.props.loadInitialContacts();
+    // }
+    componentDidMount() {
+        this.props.loadInitialContacts();
     }
 
     renderInitialView() {
@@ -58,4 +66,4 @@ const styles = StyleSheet.create({
 
 
 
-export default connect(mapStateToProps)(PeopleList);
+export default connect(mapStateToProps, { loadInitialContacts })(PeopleList);
