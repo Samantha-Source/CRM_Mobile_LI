@@ -20,7 +20,7 @@ export const formUpdate = ({ prop, value }) => {
 
 export const createNewContact = ({ firstName, lastName, phone, email, company, project, notes }) => {
     return (dispatch) => {
-        fetch('https://192.168.1.188:3000/contact', {
+        fetch('http://192.168.1.188:3000/contact', {
             method: "POST",
             body: JSON.stringify({
                 "firstName": firstName,
