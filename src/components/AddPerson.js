@@ -143,8 +143,8 @@ class AddPerson extends Component {
 }
 
 const mapStateToProps = state => {
-    const { firstName, lastName, phone, email, project, notes } = state;
-    return { firstName, lastName, phone, email, project, notes};
+    const { firstName, lastName, phone, email, company, project, notes } = state;
+    return { firstName, lastName, phone, email, company, project, notes};
 }
 
 const styles = StyleSheet.create({
