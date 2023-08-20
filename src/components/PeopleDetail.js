@@ -28,7 +28,7 @@ class PeopleDetail extends Component {
 
 const mapStateToProps = state => {
     return {
-        ToUpdate: state.toUpdate,
+        toUpdate: state.toUpdate,
     }
 };
 

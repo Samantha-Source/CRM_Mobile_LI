@@ -11,7 +11,8 @@ const theme = getTheme();
 
 class DetailView extends Component {
     updateTest() {
-        this.props.updateContact(this.props.person)
+        this.props.updateContact(this.props.person);
+        console.log("Edit pressed")
     }
     
     render() {
